@@ -3,7 +3,7 @@ export const createFetchInterceptors = () => {
   window.fetch = async (...args) => {
     // eslint-disable-next-line prefer-const
     let [resource, config] = args
-    resource = `${import.meta.env.VITE_API}${resource}`
+    // resource = `${import.meta.env.VITE_API}${resource}`
 
     const headers = {
       ...config?.headers,
