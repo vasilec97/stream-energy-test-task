@@ -4,7 +4,7 @@
     "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "types": ["vite-plugin-svgr/client"],
+    "types": ["vite-plugin-svgr/client", "./node_modules/telegram-webapps"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
