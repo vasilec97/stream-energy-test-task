@@ -3,13 +3,14 @@ import { Zodiac } from "../types/types"
 import { Link } from "react-router-dom"
 import cls from "./ZodiacCard.module.css"
 import { formatDate } from "../../../shared/lib/dateFormatter"
+import { useTelegram } from "../../../shared/lib/hooks/useTelegram"
 
 type ZodiacCardProps = {
   zodiac: Zodiac
 }
 
 export const ZodiacCard: FC<ZodiacCardProps> = ({ zodiac }) => {
-  const { id, name, icon, startDate, endDate } = zodiac
+  const { id, name, Icon, iconViewBox, startDate, endDate } = zodiac
 
   return (
     <article className={cls.ZodiacListWrapper}>
@@ -19,7 +20,14 @@ export const ZodiacCard: FC<ZodiacCardProps> = ({ zodiac }) => {
             <h2 className={cls.title}>{name}</h2>
             <p className={cls.date}>{`${formatDate(startDate)} - ${formatDate(endDate)}`}</p>
           </header>
-          <div className={cls.image}>{icon}</div>
+          <div className={cls.image}>
+            <Icon
+              width={200}
+              height={250}
+              viewBox={iconViewBox}
+              fill="var(--tg-theme-text-color)"
+            />
+          </div>
         </div>
       </Link>
     </article>

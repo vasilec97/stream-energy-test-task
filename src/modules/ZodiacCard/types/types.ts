@@ -1,9 +1,12 @@
-import { ReactNode } from "react"
-
 export type Zodiac = {
   id: string
   name: string
-  icon: ReactNode
+  Icon: React.FunctionComponent<
+    React.SVGProps<SVGSVGElement> & {
+      title?: string | undefined
+    }
+  >
+  iconViewBox: string
   startDate: Date
   endDate: Date
 }
