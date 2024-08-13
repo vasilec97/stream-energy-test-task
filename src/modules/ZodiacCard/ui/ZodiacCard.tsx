@@ -3,7 +3,6 @@ import { Zodiac } from "../types/types"
 import { Link } from "react-router-dom"
 import cls from "./ZodiacCard.module.css"
 import { formatDate } from "../../../shared/lib/dateFormatter"
-import { useTelegram } from "../../../shared/lib/hooks/useTelegram"
 
 type ZodiacCardProps = {
   zodiac: Zodiac
