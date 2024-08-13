@@ -1,0 +1,33 @@
+.ZodiacListWrapper {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 8px var(--tg-theme-accent-text-color);
+  background-color: var(--tg-theme-bg-color);
+
+  .link {
+    display: block;
+  }
+
+  .ZodiacCard {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        font-size: 28px;
+      }
+    }
+
+    .image {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
