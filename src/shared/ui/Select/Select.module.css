@@ -3,8 +3,7 @@
   font-family: "Inter Variable", sans-serif;
   min-width: 80px;
   padding: 6px 12px;
-  /* border: 1px solid var(--tg-theme-accent-text-color); */
-  border: 1px solid black;
+  border: 1px solid var(--tg-theme-accent-text-color);
   border-radius: 100px;
   color: var(--tg-theme-text-color);
   background-color: var(--tg-theme-bg-color);
@@ -38,8 +37,7 @@
   width: var(--radix-select-trigger-width);
   overflow: hidden;
   background-color: var(--tg-theme-bg-color);
-  /* border: 1px solid var(--tg-theme-accent-text-color); */
-  border: 1px solid black;
+  border: 1px solid var(--tg-theme-accent-text-color);
   border-radius: 20px;
   z-index: 1100;
 }
