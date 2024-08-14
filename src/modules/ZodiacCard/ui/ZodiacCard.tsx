@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import cls from "./ZodiacCard.module.css"
 import { formatDate } from "../../../shared/lib/dateFormatter"
 import { useTranslation } from "react-i18next"
+import { useTelegram } from "../../../shared/lib/hooks/useTelegram"
 
 type ZodiacCardProps = {
   zodiac: Zodiac
@@ -15,9 +16,10 @@ export const ZodiacCard: FC<ZodiacCardProps> = ({ zodiac }) => {
   } = useTranslation()
   const { id, Icon, iconViewBox, startDate, endDate } = zodiac
   const { t } = useTranslation()
+  const { showBackButton } = useTelegram()
 
   return (
-    <article className={cls.ZodiacListWrapper}>
+    <article className={cls.ZodiacListWrapper} onClick={showBackButton}>
       <Link to={id} className={cls.link}>
         <div className={cls.ZodiacCard}>
           <header className={cls.top}>
