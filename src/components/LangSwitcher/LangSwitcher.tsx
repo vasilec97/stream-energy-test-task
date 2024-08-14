@@ -15,11 +15,11 @@ const options = (t: TFunction) => [
 export const LangSwitcher = () => {
   const { t, i18n } = useTranslation()
   const navigate = useNavigate()
-  const location = useLocation()
+  const { pathname } = useLocation()
 
   const onChange = (id: string) => {
     i18n.changeLanguage(id)
-    navigate(location.pathname, { replace: true })
+    navigate(pathname, { replace: true })
   }
 
   return (
