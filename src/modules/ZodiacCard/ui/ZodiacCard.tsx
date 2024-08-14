@@ -31,8 +31,8 @@ export const ZodiacCard: FC<ZodiacCardProps> = ({ zodiac }) => {
           </header>
           <div className={cls.image}>
             <Icon
-              width={200}
-              height={250}
+              width={100}
+              height={125}
               viewBox={iconViewBox}
               fill="var(--tg-theme-text-color)"
             />
