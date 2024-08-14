@@ -1,0 +1,65 @@
+.SelectTrigger {
+  position: relative;
+  font-family: "Inter Variable", sans-serif;
+  min-width: 80px;
+  padding: 6px 12px;
+  border: 1px solid var(--tg-theme-accent-text-color);
+  border-radius: 100px;
+  color: var(--tg-theme-text-color);
+  background-color: var(--tg-theme-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &[data-state="open"] {
+    .SelectIcon {
+      transform: rotate(180deg);
+    }
+  }
+
+  .SelectIcon {
+    display: flex;
+    align-items: center;
+    transition: transform 0.15s ease-in;
+
+    svg g path {
+      fill: var(--tg-theme-text-color);
+    }
+  }
+}
+
+.SelectContent {
+  position: relative;
+  font-family: "Inter Variable", sans-serif;
+  font-size: 14px;
+  color: var(--tg-theme-text-color);
+  width: var(--radix-select-trigger-width);
+  overflow: hidden;
+  background-color: var(--tg-theme-bg-color);
+  border: 1px solid var(--tg-theme-accent-text-color);
+  z-index: 1100;
+}
+
+.SelectItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--dark-color-100);
+  }
+
+  &[data-highlighted] {
+    outline: none;
+  }
+
+  .CheckIcon {
+    width: 16px;
+    height: 16px;
+    fill: var(--tg-theme-text-color);
+  }
+}

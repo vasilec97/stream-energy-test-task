@@ -1,0 +1,8 @@
+.header {
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--tg-theme-secondary-bg-color);
+  padding: 15px 0;
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,2 +1,4 @@
+@import "@fontsource-variable/inter";
 @import "./reset.css";
+@import "./variables.css";
 @import "./app.css";
