@@ -11,7 +11,7 @@ export const useTelegram = () => {
   }
 
   const navigateToBack = () => {
-    navigate("/")
+    navigate("/", { preventScrollReset: true })
     tg.BackButton.hide()
   }
 
