@@ -5,7 +5,7 @@ import FlagRU from "../../assets/icons/flag-ru.svg?react"
 import FlagUK from "../../assets/icons/flag-uk.svg?react"
 import cls from "./LangSwitcher.module.css"
 import { ReactNode } from "react"
-import { useLocation, useNavigate, useRevalidator } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
 const options = (t: TFunction) => [
   { id: "en", lng: t("en"), icon: <FlagUK /> },
