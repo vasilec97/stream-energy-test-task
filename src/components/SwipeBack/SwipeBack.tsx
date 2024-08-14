@@ -1,15 +1,16 @@
 import { TouchEvent } from "react"
 import cls from "./SwipeBack.module.css"
-import { useLocation, useNavigate } from "react-router-dom"
+import { useLocation } from "react-router-dom"
+import { useTelegram } from "../../shared/lib/hooks/useTelegram"
 
 export const SwipeBack = () => {
-  const navigate = useNavigate()
+  const { navigateToBack } = useTelegram()
   const { pathname } = useLocation()
 
   const handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
     const $page = getPage(e)
 
-    const x = e.changedTouches[0].clientX > 150 ? 100 : e.changedTouches[0].clientX
+    const x = e.changedTouches[0].clientX > 150 ? 150 : e.changedTouches[0].clientX
     if (pathname !== "/") {
       $page.style.transform = `translateX(${x}px)`
     }
@@ -20,8 +21,8 @@ export const SwipeBack = () => {
     const $page = getPage(e)
 
     if (e.changedTouches[0].clientX > 100) {
-      navigate(-1)
       $page!.style.transform = `translateX(0)`
+      navigateToBack()
     }
   }
 

@@ -10,14 +10,17 @@ export const useTelegram = () => {
     tg.BackButton.show()
   }
 
-  tg.BackButton.onClick(() => {
-    navigate(-1)
+  const navigateToBack = () => {
+    navigate("/")
     tg.BackButton.hide()
-  })
+  }
+
+  tg.BackButton.onClick(navigateToBack)
 
   return {
     tg,
     user,
     showBackButton,
+    navigateToBack,
   }
 }
