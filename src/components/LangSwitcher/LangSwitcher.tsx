@@ -22,7 +22,7 @@ export const LangSwitcher = () => {
   }
 
   return (
-    <Select onValueChange={onChange} defaultValue={i18n.language}>
+    <Select onValueChange={onChange} defaultValue={i18n.language} sideOffset={5}>
       {options(t).map((option) => (
         <SelectItem key={option.id} value={option.id} className={cls.item}>
           <Option option={option} />

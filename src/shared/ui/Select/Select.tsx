@@ -20,6 +20,7 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
     {
       children,
       value,
+      sideOffset,
       placeholderText,
       triggerClassName,
       valueClassName,
@@ -51,6 +52,7 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
         <SelectPrimitive.Portal container={portalContainer}>
           <SelectPrimitive.Content
             side={side}
+            sideOffset={sideOffset}
             position={position}
             className={classNames(cls.SelectContent, {}, [contentClassName])}
           >
