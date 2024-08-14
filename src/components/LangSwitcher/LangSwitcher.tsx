@@ -19,7 +19,7 @@ export const LangSwitcher = () => {
 
   const onChange = (id: string) => {
     i18n.changeLanguage(id)
-    queueMicrotask(() => navigate(pathname, { replace: true }))
+    navigate(pathname, { replace: true })
   }
 
   return (

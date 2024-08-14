@@ -1,8 +1,9 @@
 .SelectTrigger {
   position: relative;
   font-family: "Inter Variable", sans-serif;
+  font-size: 16px;
   min-width: 80px;
-  padding: 6px 12px;
+  padding: 16px;
   border: 1px solid var(--tg-theme-accent-text-color);
   border-radius: 100px;
   color: var(--tg-theme-text-color);
@@ -32,7 +33,7 @@
 .SelectContent {
   position: relative;
   font-family: "Inter Variable", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--tg-theme-text-color);
   width: var(--radix-select-trigger-width);
   overflow: hidden;
@@ -47,7 +48,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 12px;
+  padding: 10px 16px;
   cursor: pointer;
 
   &:hover {
