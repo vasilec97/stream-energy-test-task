@@ -6,6 +6,7 @@ import FlagUK from "../../assets/icons/flag-uk.svg?react"
 import cls from "./LangSwitcher.module.css"
 import { ReactNode } from "react"
 import { useRevalidator } from "react-router-dom"
+import { saveLanguage } from "../../shared/utils/saveLanguage"
 
 const options = (t: TFunction) => [
   { id: "en", lng: t("en"), icon: <FlagUK /> },
@@ -18,6 +19,7 @@ export const LangSwitcher = () => {
 
   const onChange = (id: string) => {
     i18n.changeLanguage(id)
+    saveLanguage(id)
     revalidator.revalidate()
   }
 
