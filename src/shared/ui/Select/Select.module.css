@@ -23,7 +23,7 @@
     align-items: center;
     transition: transform 0.15s ease-in;
 
-    svg g path {
+    svg {
       fill: var(--tg-theme-text-color);
     }
   }
@@ -38,6 +38,7 @@
   overflow: hidden;
   background-color: var(--tg-theme-bg-color);
   border: 1px solid var(--tg-theme-accent-text-color);
+  border-radius: 100px;
   z-index: 1100;
 }
 
