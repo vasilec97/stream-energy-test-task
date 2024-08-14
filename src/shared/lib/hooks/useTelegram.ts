@@ -7,11 +7,12 @@ export const useTelegram = () => {
   const user = tg?.initDataUnsafe?.user
 
   const showBackButton = () => {
-    tg.BackButton.isVisible = true
+    tg.BackButton.show()
   }
 
   tg.BackButton.onClick(() => {
     navigate(-1)
+    tg.BackButton.hide()
   })
 
   return {
