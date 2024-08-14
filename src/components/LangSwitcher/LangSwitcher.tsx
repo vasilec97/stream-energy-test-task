@@ -5,7 +5,7 @@ import FlagRU from "../../assets/icons/flag-ru.svg?react"
 import FlagUK from "../../assets/icons/flag-uk.svg?react"
 import cls from "./LangSwitcher.module.css"
 import { ReactNode } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
+import { useRevalidator } from "react-router-dom"
 import { saveLanguage } from "../../shared/utils/saveLanguage"
 
 const options = (t: TFunction) => [
@@ -15,13 +15,12 @@ const options = (t: TFunction) => [
 
 export const LangSwitcher = () => {
   const { t, i18n } = useTranslation()
-  const navigate = useNavigate()
-  const { pathname } = useLocation()
+  const revalidator = useRevalidator()
 
   const onChange = (id: string) => {
     i18n.changeLanguage(id)
     saveLanguage(id)
-    navigate(pathname, { replace: true })
+    revalidator.revalidate()
   }
 
   return (
