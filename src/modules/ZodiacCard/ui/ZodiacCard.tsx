@@ -3,21 +3,29 @@ import { Zodiac } from "../types/types"
 import { Link } from "react-router-dom"
 import cls from "./ZodiacCard.module.css"
 import { formatDate } from "../../../shared/lib/dateFormatter"
+import { useTranslation } from "react-i18next"
 
 type ZodiacCardProps = {
   zodiac: Zodiac
 }
 
 export const ZodiacCard: FC<ZodiacCardProps> = ({ zodiac }) => {
-  const { id, name, Icon, iconViewBox, startDate, endDate } = zodiac
+  const {
+    i18n: { language },
+  } = useTranslation()
+  const { id, Icon, iconViewBox, startDate, endDate } = zodiac
+  const { t } = useTranslation()
 
   return (
     <article className={cls.ZodiacListWrapper}>
       <Link to={id} className={cls.link}>
         <div className={cls.ZodiacCard}>
           <header className={cls.top}>
-            <h2 className={cls.title}>{name}</h2>
-            <p className={cls.date}>{`${formatDate(startDate)} - ${formatDate(endDate)}`}</p>
+            <h2 className={cls.title}>{t(id)}</h2>
+            <p className={cls.date}>{`${formatDate(
+              startDate,
+              language as "ru" | "en"
+            )} - ${formatDate(endDate, language as "ru" | "en")}`}</p>
           </header>
           <div className={cls.image}>
             <Icon
