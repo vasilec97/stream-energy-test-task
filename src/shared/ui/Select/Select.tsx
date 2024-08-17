@@ -4,6 +4,7 @@ import CheckIcon from "../../../assets/icons/check.svg?react"
 import ArrowDown from "../../../assets/icons/arrow-down.svg?react"
 import cls from "./Select.module.css"
 import { classNames } from "../../lib/classNames/classNames"
+import { SelectOverlay } from "./SelectOverlay"
 
 type SelectProps = ComponentProps<typeof SelectPrimitive.Root> &
   ComponentProps<typeof SelectPrimitive.Content> & {
@@ -29,12 +30,13 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
       side,
       position = "popper",
       portalContainer,
+      open,
       ...rest
     },
     forwardedRef
   ) => {
     return (
-      <SelectPrimitive.Root {...rest}>
+      <SelectPrimitive.Root open={open} {...rest}>
         <SelectPrimitive.Trigger
           ref={forwardedRef}
           className={classNames(cls.SelectTrigger, {}, [triggerClassName])}
@@ -49,15 +51,19 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             <ArrowDown viewBox="0 0 24 24" width="24" height="24" />
           </SelectPrimitive.Icon>
         </SelectPrimitive.Trigger>
-        <SelectPrimitive.Portal container={portalContainer}>
-          <SelectPrimitive.Content
-            side={side}
-            sideOffset={sideOffset}
-            position={position}
-            className={classNames(cls.SelectContent, {}, [contentClassName])}
-          >
-            <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
-          </SelectPrimitive.Content>
+        <SelectPrimitive.Portal>
+          <>
+            <SelectOverlay open={!!open} />
+            <SelectPrimitive.Content
+              side={side}
+              sideOffset={sideOffset}
+              position={position}
+              className={classNames(cls.SelectContent, {}, [contentClassName])}
+              onPointerDownOutside={(e) => e.preventDefault()}
+            >
+              <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
+            </SelectPrimitive.Content>
+          </>
         </SelectPrimitive.Portal>
       </SelectPrimitive.Root>
     )

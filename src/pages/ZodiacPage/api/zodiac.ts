@@ -8,6 +8,7 @@ export const zodiacApi = {
       body: JSON.stringify({
         sign: zodiacId,
         language,
+        period: 'today'
       }),
     })
   },

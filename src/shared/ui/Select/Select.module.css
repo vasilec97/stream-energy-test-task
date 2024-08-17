@@ -1,5 +1,4 @@
 .SelectTrigger {
-  position: relative;
   font-family: "Inter Variable", sans-serif;
   font-size: 16px;
   min-width: 80px;
@@ -31,7 +30,6 @@
 }
 
 .SelectContent {
-  position: relative;
   font-family: "Inter Variable", sans-serif;
   font-size: 16px;
   color: var(--tg-theme-text-color);
@@ -40,7 +38,6 @@
   background-color: var(--tg-theme-bg-color);
   border: 1px solid var(--tg-theme-accent-text-color);
   border-radius: 20px;
-  z-index: 1100;
 }
 
 .SelectItem {

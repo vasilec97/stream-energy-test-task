@@ -24,10 +24,10 @@ export const ZodiacCard: FC<ZodiacCardProps> = ({ zodiac }) => {
         <div className={cls.ZodiacCard}>
           <header className={cls.top}>
             <h2 className={cls.title}>{t(id)}</h2>
-            <p className={cls.date}>{`${formatDate(
-              startDate,
-              language as "ru" | "en"
-            )} - ${formatDate(endDate, language as "ru" | "en")}`}</p>
+            <p className={cls.date}>{`${formatDate(startDate, language)} - ${formatDate(
+              endDate,
+              language
+            )}`}</p>
           </header>
           <div className={cls.image}>
             <Icon

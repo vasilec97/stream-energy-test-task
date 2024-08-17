@@ -3,8 +3,10 @@ const languageToLocale = {
   ru: "ru-RU",
 }
 
-export const formatDate = (date: Date, lang: "ru" | "en") => {
-  const DATE_FORMATTER = new Intl.DateTimeFormat(languageToLocale[lang] || "ru-RU", {
+export const formatDate = (date: Date, lang: string) => {
+  const locale = languageToLocale?.[lang as "ru" | "en"] || languageToLocale.ru
+
+  const DATE_FORMATTER = new Intl.DateTimeFormat(locale, {
     day: "2-digit",
     month: "short",
   })
